@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:00:00Z",
+  "title": "Design System: KIMERIS MADEN",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "primary",
+        "displayName": "Warm Paper",
+        "canonical": "#FDFBF7",
+        "tonalRamp": ["#1E1B18", "#37322D", "#514A44", "#6B635B", "#867D74", "#A1998E", "#C1B7AB", "#FDFBF7"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Warm Canvas",
+        "canonical": "#F4EEE8",
+        "tonalRamp": ["#1D1A17", "#36312C", "#4F4942", "#696259", "#837B71", "#9D9489", "#B7AEA2", "#F4EEE8"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Mineral Ink",
+        "canonical": "#201A18",
+        "tonalRamp": ["#0B0908", "#131010", "#201A18", "#352D2A", "#4B4240", "#625857", "#7A706E", "#948B89"]
+      },
+      "ink-strong": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#171310",
+        "tonalRamp": ["#070504", "#0E0B09", "#171310", "#251E1B", "#332B27", "#423833", "#524741", "#63574F"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ash",
+        "canonical": "#5D5350",
+        "tonalRamp": ["#171413", "#282421", "#3A3533", "#4C4644", "#5D5350", "#756D69", "#8E8783", "#A8A29E"]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft Stone",
+        "canonical": "#B8B2AC",
+        "tonalRamp": ["#2A2725", "#3F3B38", "#54504C", "#6A6661", "#817C76", "#999390", "#B8B2AC", "#D2CDC8"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline Sand",
+        "canonical": "#E3DACF",
+        "tonalRamp": ["#241F1A", "#3B342C", "#514940", "#675E54", "#7D7469", "#948A7E", "#C3B9AB", "#E3DACF"]
+      },
+      "seam": {
+        "role": "secondary",
+        "displayName": "Terracotta Seam",
+        "canonical": "#964F4C",
+        "tonalRamp": ["#2A1513", "#411E1B", "#582825", "#6F3531", "#7E423F", "#964F4C", "#AD6864", "#C87F7B"]
+      },
+      "seam-deep": {
+        "role": "secondary",
+        "displayName": "Deep Seam",
+        "canonical": "#7E423F",
+        "tonalRamp": ["#230F0E", "#361715", "#4A201D", "#5D2B27", "#6F3530", "#7E423F", "#9A5A56", "#B67470"]
+      },
+      "seam-bright": {
+        "role": "secondary",
+        "displayName": "Bright Seam",
+        "canonical": "#C87F7B",
+        "tonalRamp": ["#331715", "#4A2320", "#61302C", "#78403B", "#8F5350", "#A66661", "#C87F7B", "#E3B7B4"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Homepage hero H1 only. clamp(2.9rem,6.5vw,6rem), lh 0.98, -0.035em, max 14ch." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2s. clamp(1.9rem,3.4vw,3rem), -0.03em. Internal route H1s use clamp(2.4rem,5vw,4.5rem) lh 1.02; the closing CTA H2 uses clamp(2.1rem,4.5vw,3.75rem) lh 1.02." },
+      "title": { "displayName": "Title", "purpose": "Row and drawer headings at 24px; panel sub-headings at 20px (Manrope 700, tight tracking)." },
+      "body": { "displayName": "Body", "purpose": "Inter 400. Leads at 18px/1.625 in muted, max ~52-62ch; default body 16px; meta 13-15px." },
+      "label": { "displayName": "Label", "purpose": "Footer column headers only: Manrope 700, 14px, uppercase, +0.14em, soft on ink-strong." },
+      "control": { "displayName": "Control", "purpose": "Button and row-link text: Manrope 700 at 15px (row links 18px)." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "seam-draw", "value": "1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards", "purpose": "Strata paths draw once on load via stroke-dashoffset 1 to 0, staggered 0.12s per path. Gated by prefers-reduced-motion: no-preference." },
+      { "name": "state-color", "value": "transition-colors 200ms", "purpose": "Default treatment for link and button hover state changes." },
+      { "name": "arrow-nudge", "value": "transform 200ms translateX(4px)", "purpose": "Row-link arrows nudge right on group hover." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single CTA fill: ink on paper, shifting to terracotta on hover.",
+      "html": "<button class=\"ds-btn-primary\">Faaliyetlerimizi Keşfedin</button>",
+      "css": ".ds-btn-primary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border-radius: 6px; background: var(--ink, #201A18); color: var(--paper, #FDFBF7); padding: 12px 24px; border: none; font-family: var(--font-manrope, Manrope), system-ui, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 200ms; } .ds-btn-primary:hover { background: var(--seam, #964F4C); } .ds-btn-primary:focus-visible { outline: 2px solid var(--seam, #964F4C); outline-offset: 2px; }"
+    },
+    {
+      "name": "Quiet Link",
+      "kind": "custom",
+      "refersTo": "link-quiet",
+      "description": "Secondary CTA: ink text underlined by a 2px terracotta seam at 7px offset.",
+      "html": "<a class=\"ds-link-quiet\" href=\"#\">Hakkımızda</a>",
+      "css": ".ds-link-quiet { display: inline-flex; min-height: 44px; align-items: center; color: var(--ink, #201A18); font-weight: 500; text-decoration: underline; text-decoration-color: var(--seam, #964F4C); text-decoration-thickness: 2px; text-underline-offset: 7px; transition: color 200ms; } .ds-link-quiet:hover { color: var(--seam, #964F4C); } .ds-link-quiet:focus-visible { outline: 2px solid var(--seam, #964F4C); outline-offset: 2px; }"
+    },
+    {
+      "name": "Row Link with Arrow",
+      "kind": "custom",
+      "refersTo": "link-row",
+      "description": "Editorial list action: display-weight label plus an arrow that nudges right on hover.",
+      "html": "<a class=\"ds-link-row\" href=\"#\">İncele <svg width=\"18\" height=\"12\" viewBox=\"0 0 18 12\" aria-hidden=\"true\" fill=\"none\"><path d=\"M0 6h16M11 1l5 5-5 5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-link-row { display: inline-flex; min-height: 44px; align-items: center; gap: 12px; font-family: var(--font-manrope, Manrope), system-ui, sans-serif; font-size: 18px; font-weight: 700; color: var(--ink, #201A18); text-decoration: none; transition: color 200ms; } .ds-link-row svg { transition: transform 200ms; } .ds-link-row:hover { color: var(--seam, #964F4C); } .ds-link-row:hover svg { transform: translateX(4px); } .ds-link-row:focus-visible { outline: 2px solid var(--seam, #964F4C); outline-offset: 2px; }"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Sticky paper bar: wordmark left, section links and İletişim button right, hairline bottom border.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header-inner\"><a class=\"ds-wordmark\" href=\"#\">KIMERIS <span>MADEN</span></a><nav class=\"ds-header-nav\"><a href=\"#\">Kurumsal</a><a href=\"#\">Faaliyetlerimiz</a><a href=\"#\">Sürdürülebilirlik</a><a href=\"#\">Kariyer</a><a href=\"#\">Haberler</a></nav><button class=\"ds-btn-primary\">İletişim</button></div></header>",
+      "css": ".ds-header { position: sticky; top: 0; z-index: 40; background: var(--paper, #FDFBF7); border-bottom: 1px solid var(--hairline, #E3DACF); } .ds-header-inner { max-width: 1280px; margin: 0 auto; height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 48px; } .ds-wordmark { font-family: var(--font-manrope, Manrope), system-ui, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink, #201A18); text-decoration: none; } .ds-wordmark span { color: var(--seam, #964F4C); } .ds-header-nav { display: flex; align-items: center; gap: 28px; } .ds-header-nav a { font-size: 15px; font-weight: 500; color: var(--ink, #201A18); text-decoration: none; text-underline-offset: 6px; transition: color 200ms; } .ds-header-nav a:hover { color: var(--seam, #964F4C); } .ds-btn-primary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border-radius: 6px; background: var(--ink, #201A18); color: var(--paper, #FDFBF7); padding: 12px 24px; border: none; font-family: var(--font-manrope, Manrope), system-ui, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 200ms; } .ds-btn-primary:hover { background: var(--seam, #964F4C); }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "link-quiet",
+      "description": "Placeholder identity: three-stroke strata mark beside Manrope ExtraBold text, MADEN in seam.",
+      "html": "<a class=\"ds-wordmark-full\" href=\"#\" aria-label=\"KIMERIS MADEN — ana sayfa\"><svg width=\"30\" height=\"26\" viewBox=\"0 0 30 26\" aria-hidden=\"true\" fill=\"none\"><path d=\"M2 5.5C6.5 2.8 11 2.6 15 4.2s7.5 1.5 13-1.4\" stroke=\"#201A18\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M2 13c5.5-2.4 10-2 14.5.5s8 1.3 11.5-1.7\" stroke=\"#964F4C\" stroke-width=\"2.8\" stroke-linecap=\"round\"/><path d=\"M2 20.5c6-1.7 10.5-.6 14.5 1.8s7.5.9 11.5-1.8\" stroke=\"#201A18\" stroke-width=\"2.4\" stroke-linecap=\"round\" opacity=\"0.45\"/></svg><span>KIMERIS <em>MADEN</em></span></a>",
+      "css": ".ds-wordmark-full { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-manrope, Manrope), system-ui, sans-serif; font-size: 17px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; color: var(--ink, #201A18); } .ds-wordmark-full svg { flex-shrink: 0; } .ds-wordmark-full em { font-style: normal; color: var(--seam, #964F4C); }"
+    },
+    {
+      "name": "Strata Field Plate",
+      "kind": "custom",
+      "refersTo": "link-row",
+      "description": "Signature authored contour drawing: ink strokes with terracotta seams, drawing once on load when motion is allowed.",
+      "html": "<div class=\"ds-strata-frame\"><svg class=\"ds-strata\" viewBox=\"160 100 520 400\" preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\" fill=\"none\"><path d=\"M-20 90C160 50 320 130 500 96S760 60 840 100\" stroke=\"var(--seam, #964F4C)\" stroke-width=\"2.6\" opacity=\"0.9\" pathLength=\"1\" class=\"ds-strata-path\"/><path d=\"M-20 210C180 170 340 250 520 215S780 190 840 220\" stroke=\"var(--ink, #201A18)\" stroke-width=\"1.4\" opacity=\"0.22\" pathLength=\"1\" class=\"ds-strata-path\"/><path d=\"M-20 265C140 235 320 300 500 270S760 245 840 275\" stroke=\"var(--seam, #964F4C)\" stroke-width=\"1.8\" opacity=\"0.85\" pathLength=\"1\" class=\"ds-strata-path\"/><path d=\"M-20 430C180 400 340 465 520 435S780 410 840 440\" stroke=\"var(--seam, #964F4C)\" stroke-width=\"2.2\" opacity=\"0.9\" pathLength=\"1\" class=\"ds-strata-path\"/><path d=\"M-20 375C120 345 320 410 480 380S760 355 840 385\" stroke=\"var(--ink, #201A18)\" stroke-width=\"1.5\" opacity=\"0.26\" pathLength=\"1\" class=\"ds-strata-path\"/></svg><figcaption class=\"ds-strata-caption\">Temsili katman çizimi; jeolojik kesit yorumudur.</figcaption></div>",
+      "css": ".ds-strata-frame { border: 1px solid var(--hairline, #E3DACF); border-radius: 6px; background: var(--canvas, #F4EEE8); overflow: hidden; } .ds-strata { display: block; width: 100%; height: 260px; } .ds-strata-path { stroke-linecap: round; } .ds-strata-caption { font-family: var(--font-inter, Inter), system-ui, sans-serif; font-size: 13px; line-height: 1.375; color: var(--muted, #5D5350); padding: 12px 16px; } @media (prefers-reduced-motion: no-preference) { .ds-strata-path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ds-seam-draw 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; } .ds-strata-path:nth-child(2) { animation-delay: 0.12s; } .ds-strata-path:nth-child(3) { animation-delay: 0.24s; } .ds-strata-path:nth-child(4) { animation-delay: 0.36s; } .ds-strata-path:nth-child(5) { animation-delay: 0.48s; } } @keyframes ds-seam-draw { to { stroke-dashoffset: 0; } }"
+    },
+    {
+      "name": "Notice Panel",
+      "kind": "card",
+      "refersTo": "link-quiet",
+      "description": "Designed empty state: display-weight heading, muted body, quiet link — reused for news, pending stubs, principles.",
+      "html": "<div class=\"ds-panel\"><h3 class=\"ds-panel-title\">Şu anda yayınlanmış haber bulunmuyor.</h3><p class=\"ds-panel-body\">Kurumsal duyurularımız ve proje haberlerimiz yayımlandıkça bu bölümde yer alacaktır.</p><a class=\"ds-link-quiet\" href=\"#\">İletişime geçin</a></div>",
+      "css": ".ds-panel { border: 1px solid var(--hairline, #E3DACF); border-radius: 6px; background: var(--paper, #FDFBF7); padding: 40px; } .ds-panel-title { font-family: var(--font-manrope, Manrope), system-ui, sans-serif; font-size: 20px; font-weight: 700; color: var(--ink, #201A18); margin: 0 0 12px; } .ds-panel-body { font-family: var(--font-inter, Inter), system-ui, sans-serif; font-size: 16px; line-height: 1.625; color: var(--muted, #5D5350); margin: 0 0 28px; max-width: 56ch; } .ds-link-quiet { display: inline-flex; min-height: 44px; align-items: center; color: var(--ink, #201A18); font-weight: 500; text-decoration: underline; text-decoration-color: var(--seam, #964F4C); text-decoration-thickness: 2px; text-underline-offset: 7px; transition: color 200ms; } .ds-link-quiet:hover { color: var(--seam, #964F4C); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Geological Survey",
+    "overview": "The site reads as a geological survey of a company: layered strata, hairline rules, and dated honesty. A warm paper ground carries oversized ink editorial type; terracotta appears only as a seam — a thin deposit of color threaded through ink strokes, hovers, and the caret. The recurring material is an authored strata contour drawing, not photography: nine hand-set SVG paths that draw themselves once on load, then sit still. Depth never comes from shadows; it comes from tonal band alternation (paper → canvas → deep ink) and 1px hairlines, like rules on a survey sheet.\n\nThe world refuses the mining-category defaults: no cinematic photo wall, no unverifiable KPI strip, no dark/grunge pit aesthetic, no gradients, no box shadows. Empty states are designed panels, not blank rectangles — \"no published news yet\" is a real, styled answer. Turkish is the primary voice, so display type is wrapped in ch-based measures and guarded with hyphenation.",
+    "keyCharacteristics": [
+      "Warm paper ground (#FDFBF7) with mineral ink editorial type; terracotta seam accent held to ~10% of any surface.",
+      "Manrope ExtraBold display with tight tracking (−0.03em to −0.035em) against Inter body at 18px/1.625 in muted ink.",
+      "Hairline-only depth: 1px borders plus paper/canvas/ink-strong band alternation; zero box shadows, zero gradients.",
+      "Authored strata contour SVG as the sole imagery — decorative, aria-hidden, and captioned as representative when mistakable for data.",
+      "One motion gesture: seams draw once on load (1.6s expo-out, 0.12s stagger per path), fully gated by prefers-reduced-motion: no-preference.",
+      "WCAG 2.2 AA: 44px minimum targets, seam focus-visible outlines with a bright variant on dark bands, verified contrast pairs."
+    ],
+    "rules": [
+      { "name": "The Two Locks Rule", "body": "Paper #FDFBF7 and seam #964F4C are owner-locked brand commitments (11 Nov 2026). Derived neutrals may evolve; these two values may not.", "section": "colors" },
+      { "name": "The Seam Budget Rule", "body": "The terracotta family covers at most ~10% of any surface. Its rarity is the point: it marks seams, state changes, and nothing else.", "section": "colors" },
+      { "name": "The Bright-Seam Rule", "body": "seam-bright exists only on ink-strong surfaces. Never set it on paper or canvas — it does not carry contrast there.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "Manrope speaks (display, headlines, titles, buttons, wordmark); Inter explains (body, navigation, meta). No third face, no system display substitute.", "section": "typography" },
+      { "name": "The Long-Word Guard", "body": "Every h1–h3 gets overflow-wrap: break-word and hyphens: auto; Turkish compounds never force horizontal overflow.", "section": "typography" },
+      { "name": "The Hairline Rule", "body": "If a surface needs separation, it gets a 1px hairline or a tonal band change — never a box shadow, glow, or gradient.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do carry all depth with hairlines and band alternation (1px #E3DACF on light, white 10% on ink).",
+      "Do cap terracotta at ~10% of any surface: seam strokes, hovers, selection, caret, focus.",
+      "Do keep every interactive target at least 44px tall (56px in the mobile drawer).",
+      "Do mark decorative SVGs aria-hidden and caption any drawing mistakable for data (\"Temsili katman çizimi\").",
+      "Do scope .on-ink on dark bands so focus rings switch to seam-bright.",
+      "Do wrap display type in ch-based measures (14–18ch) so Turkish long words break instead of overflowing."
+    ],
+    "donts": [
+      "Don't use box shadows, glows, or gradients — depth is hairline and tonal only.",
+      "Don't place seam-bright on paper or canvas; it exists for ink-strong surfaces (5.96:1 there).",
+      "Don't introduce a third typeface or substitute a system display face; Manrope and Inter only.",
+      "Don't ship raster photography, invented metrics, or KPI tiles; this world refuses the mining photo wall and unverifiable numbers.",
+      "Don't uppercase headings; uppercase is reserved for 14px footer column labels.",
+      "Don't animate for users who prefer reduced motion; the seam-draw stays behind its media query."
+    ]
+  }
+}
