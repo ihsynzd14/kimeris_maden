@@ -105,35 +105,39 @@ const QUICK_LINKS: { href: string; label: string; icon: ReactNode }[] = [
 
 export default function HeroQuickLinks() {
   return (
-    <ul className="no-scrollbar -mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-1 lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
-      {QUICK_LINKS.map((link) => (
-        <li key={link.href} className="w-[210px] shrink-0 snap-start lg:w-auto">
+    <ul className="no-scrollbar -mx-6 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain px-6 pb-1 max-lg:[mask-image:linear-gradient(to_right,transparent,black_28px,black_calc(100%-28px),transparent)] lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
+      {QUICK_LINKS.map((link, index) => (
+        <li key={link.href} className="w-[216px] shrink-0 snap-start lg:w-auto">
           <Link
             href={link.href}
-            className="group flex min-h-[104px] flex-col justify-between rounded-md bg-paper p-5 transition-colors duration-200 hover:bg-canvas"
+            className="group flex min-h-[116px] flex-col justify-between rounded-lg bg-paper p-5 transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:bg-canvas hover:shadow-[0_18px_36px_-18px_rgba(23,19,16,0.55)] active:scale-[0.98] active:transition-transform active:duration-150 lg:min-h-[124px]"
           >
-            <span className="text-muted transition-colors duration-200 group-hover:text-seam">
-              {link.icon}
-            </span>
-            <span className="mt-6 flex items-center gap-2.5 font-display text-[15px] font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-seam lg:text-[16px]">
-              {link.label}
-              <span className="inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center bg-seam text-paper">
-                <svg
-                  width="8"
-                  height="8"
-                  viewBox="0 0 8 8"
-                  aria-hidden="true"
-                  fill="none"
-                >
-                  <path
-                    d="M3 1l3 3-3 3"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+            <div className="flex items-start justify-between">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-canvas text-muted transition-colors duration-300 group-hover:bg-seam group-hover:text-paper">
+                {link.icon}
               </span>
+              <span className="text-[11px] font-semibold tracking-[0.18em] text-soft/70" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <span className="mt-6 flex items-center gap-2 font-display text-[15px] font-bold leading-tight text-ink transition-colors duration-300 group-hover:text-seam lg:text-[16px]">
+              {link.label}
+              <svg
+                width="9"
+                height="9"
+                viewBox="0 0 8 8"
+                aria-hidden="true"
+                fill="none"
+                className="shrink-0 text-seam transition-transform duration-300 ease-out group-hover:translate-x-1"
+              >
+                <path
+                  d="M3 1l3 3-3 3"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
           </Link>
         </li>

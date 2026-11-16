@@ -1,7 +1,9 @@
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import Hero from "@/components/home/Hero";
+import VideoBanner from "@/components/home/VideoBanner";
 import CompanyStatement from "@/components/home/CompanyStatement";
+import PurposeBanner from "@/components/home/PurposeBanner";
 import Activities from "@/components/home/Activities";
 import Responsibility from "@/components/home/Responsibility";
 import CareersTeaser from "@/components/home/CareersTeaser";
@@ -13,8 +15,10 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="main">
+        <VideoBanner />
         <Hero />
         <CompanyStatement />
+        <PurposeBanner />
         <Activities />
         <Responsibility />
         <CareersTeaser />

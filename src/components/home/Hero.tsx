@@ -1,7 +1,8 @@
 import Link from "next/link";
 import StrataField from "@/components/ui/StrataField";
-import GeologyPlate from "@/components/ui/GeologyPlate";
 import HeroQuickLinks from "@/components/home/HeroQuickLinks";
+import HeroPhotoCarousel from "@/components/home/HeroPhotoCarousel";
+import StrokeText from "@/components/ui/StrokeText";
 
 export default function Hero() {
   return (
@@ -36,14 +37,50 @@ export default function Hero() {
       <div className="relative mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pb-12 pt-12 lg:px-12 lg:pb-20 lg:pt-24">
         <div className="grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="min-w-0">
-            <h1 className="font-display text-[clamp(2.4rem,4.6vw,3.75rem)] font-extrabold leading-[1.06] tracking-[-0.03em] text-paper">
-              <span className="block">Yer altındaki</span>
+            <h1 className="font-display font-extrabold text-paper [&_.stroke-text__svg]:ml-0!">
+              <StrokeText
+                text="Yer altındaki"
+                fontSize={64}
+                fontWeight={800}
+                letterSpacing={-2}
+                strokeWidth={1.5}
+                strokeColor="#c87f7b"
+                fillColor="#fdfbf7"
+                drawDuration={1.4}
+                stagger={0.045}
+                fillDelay={0.15}
+                trigger="scroll"
+              />
               <span className="block">
-                <span className="bg-seam px-[0.14em] py-[0.06em] text-paper [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
-                  potansiyele
-                </span>
+                <StrokeText
+                  text="potansiyele"
+                  fontSize={64}
+                  fontWeight={800}
+                  letterSpacing={-2}
+                  strokeWidth={1.5}
+                  strokeColor="#c87f7b"
+                  fillColor="#c87f7b"
+                  drawDuration={1.4}
+                  stagger={0.045}
+                  fillDelay={0.15}
+                  trigger="scroll"
+                />
               </span>
-              <span className="block">yeni bir bakış.</span>
+              <span className="block">
+                <StrokeText
+                  text="yeni bir bakış."
+                  fontSize={64}
+                  fontWeight={800}
+                  letterSpacing={-2}
+                  strokeWidth={1.5}
+                  strokeColor="#c87f7b"
+                  fillColor="#fdfbf7"
+                  drawDuration={1.4}
+                  stagger={0.045}
+                  fillDelay={0.15}
+                  trigger="scroll"
+                />
+              </span>
             </h1>
             <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-soft lg:mt-7">
               Maden ve doğal kaynaklar alanındaki çalışmalarımızı yakından tanıyın.
@@ -56,18 +93,7 @@ export default function Hero() {
           </div>
 
           <figure className="min-w-0">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-md border border-white/10 bg-ink lg:aspect-[4/3]">
-              <GeologyPlate className="absolute inset-0 h-full w-full" />
-              <div className="absolute bottom-4 left-4 flex gap-[3px]" aria-hidden="true">
-                <span className="h-[3px] w-9 bg-paper/45" />
-                <span className="h-[3px] w-9 bg-seam-bright" />
-                <span className="h-[3px] w-9 bg-paper/45" />
-                <span className="h-[3px] w-9 bg-paper/45" />
-              </div>
-            </div>
-            <figcaption className="mt-2.5 text-[13px] leading-snug text-soft lg:mt-3">
-              Temsili jeolojik kesit çizimi; ölçekli bir saha gösterimi değildir.
-            </figcaption>
+            <HeroPhotoCarousel />
           </figure>
         </div>
       </div>
