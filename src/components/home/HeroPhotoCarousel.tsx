@@ -6,7 +6,6 @@ import Image from "next/image";
 const PHOTOS = [
   { src: "/machinery_collage.webp", alt: "Makine ve ekipman kolajı" },
   { src: "/machinery_panels.webp", alt: "Makine ve ekipman panelleri" },
-  { src: "/mountain_peak.webp", alt: "Dağ zirvesi görünümü" },
   { src: "/quarry_montage.webp", alt: "Ocak sahası montajı" },
 ];
 

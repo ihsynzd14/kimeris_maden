@@ -107,7 +107,7 @@ async function StockTicker() {
 
 export default function CompanyStatement() {
   return (
-    <section className="border-t border-hairline bg-paper">
+    <section id="kesif" className="border-t border-hairline bg-paper">
       <Suspense fallback={null}>
         <StockTicker />
       </Suspense>

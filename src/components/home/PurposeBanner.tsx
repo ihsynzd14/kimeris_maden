@@ -44,10 +44,11 @@ export default function PurposeBanner() {
 
         <div className="relative z-10 lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[52%] lg:items-end lg:justify-end">
           <Image
-            src="/minning_professionalist.png"
+            src="/minning_man.png"
             alt="Baretli maden çalışanı"
             width={1678}
             height={800}
+            loading="eager"
             sizes="(min-width: 1024px) 60vw, 100vw"
             className="h-auto w-full lg:h-full lg:w-auto lg:max-w-none"
           />

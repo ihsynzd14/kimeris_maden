@@ -27,7 +27,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" className={`${manrope.variable} ${inter.variable}`}>
+    <html lang="tr" className={`${manrope.variable} ${inter.variable} scroll-smooth motion-reduce:scroll-auto`}>
       <body className="min-h-dvh bg-paper font-sans text-ink antialiased">
         <a
           href="#main"

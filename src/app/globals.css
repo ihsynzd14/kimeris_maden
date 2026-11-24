@@ -153,3 +153,20 @@
     animation: seam-draw 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
+
+/* Hero scroll cue: gentle nudge, rests under reduced motion. */
+@keyframes cue-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cue-nudge {
+    animation: cue-nudge 2.4s ease-in-out infinite;
+  }
+}
